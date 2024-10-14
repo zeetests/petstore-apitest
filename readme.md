@@ -58,29 +58,34 @@ The following tests are implemented:
 ### Pets Creation
 - **Endpoint**: `/pet`
     - **Method**: `POST`
-    - **Description**: Add a new pet to the store.
+    - **Description**: Tests add a new pet to the store.
+
+- **Endpoint**: `/pet/{petId}/uploadImage`
+  - **Method**: `POST`
+  - **Description**: Tests uploading of an image
+
 
 ### Pets Update
 - **Endpoint**: `/pet`
     - **Method**: `PUT`
-    - **Description**: Update an existing pet.
+    - **Description**: Tests updating an existing pet.
 
 - **Endpoint**: `/pet/{petId}`
   - **Method**: `PUT`
-  - **Description**: Update a single pet via Form Data.
+  - **Description**: Tests updating a single pet via Form Data.
 
 ### Pets Details Retrieval
 - **Endpoint**: `/pet/{petId}`
     - **Method**: `GET`
-    - **Description**: Returns a single pet via ID.
+    - **Description**: Tests getting response of a single pet via ID.
 
 - **Endpoint**: `/pet/findByTags`
     - **Method**: `GET`
-    - **Description**: Returns results of pet(s) via tags.
+    - **Description**: Tests getting response results of pet(s) via tags.
 
 - **Endpoint**: `/pet/findByStatus`
     - **Method**: `GET`
-    - **Description**: Returns results of pet(s) via status.
+    - **Description**: Tests getting response results of pet(s) via status.
 
 
 ### Pet Deletion
@@ -108,6 +113,7 @@ Pets resource
 Users resource
 - Update User can be executed without username
 - Pet status is not validated when placing order for pet
+- Login doesn't have validation of username and password
 
 Inventory resource
 - Can place order with 0 inventory
