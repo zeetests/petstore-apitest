@@ -23,20 +23,20 @@ Before running the tests, ensure you have the following installed:
 
 The following tests are implemented:
 
-1. **Create Users with List Input**: Tests the API endpoint to create multiple users using a list.
-2. **Create Users with Array Input**: Tests the API endpoint to create multiple users using an array.
-3. **Delete Users**: Tests the API endpoint to delete users based on their usernames.
-
+1. **Create Pets**: Tests the API endpoint to create pets in the Petstore.
+2. **Update Pets**: Tests the API endpoint to update pet details in the Petstore.
+3. **Delete Pets**: Tests the API endpoint to delete pet details
+4. **Read Pets Details**: Tests the API endpoint to retrieve pet details
 ### Example Test Cases
 
-- **Create Users with List Input**
-    - This test sends a POST request to `/user/createWithList` with a JSON array containing user details.
+- **Create Pets**
+    - This test sends a POST request to `/pet` with a JSON containing user details.
 
-- **Create Users with Array Input**
-    - This test sends a POST request to `/user/createWithArray` with a JSON array containing user details.
+- **Find Pet Details Status **
+    - This test sends a GET request to `/pet/findByStatus`.
 
-- **Delete Users**
-    - This test sends DELETE requests to `/user/{username}` for multiple usernames, checking for successful deletion or handling errors.
+- **Delete Pets**
+    - This test sends DELETE requests to `/pet/{petId}`.
 
 ## How to Run Tests
 
@@ -48,9 +48,35 @@ The following tests are implemented:
 
 2. Resolve maven dependencies. You can double check by clicking pom.xml
    
-3. Navigate to src > test > java. Right click on preferred test to run. i.e, PetCRUDTest 
-   
-4. Choose Run
+3-A. If you're using IntelliJ - Navigate to src > test > java. Right click on preferred test to run. i.e, PetCRUDTest. Then Choose Run
+
+3-B. Run via terminal
+1. **Open Terminal**: Navigate to your project directory where the `pom.xml` file is located.
+
+2. **Run the Test**: Use the following command to run your JUnit tests:
+
+   ```bash
+   mvn test
+   ```
+
+   This command will execute all tests in your project.
+
+3. **Run a Specific Test**: If you want to run a specific test class, you can use:
+
+   ```bash
+   mvn -Dtest=YourTestClassName test
+   ```
+
+   Replace `YourTestClassName` with the name of the test class you want to run.
+
+4. **Run a Specific Test Method**: To run a specific test method within a test class, use:
+
+   ```bash
+   mvn -Dtest=YourTestClassName#yourTestMethod test
+   ```
+
+   Replace `yourTestMethod` with the name of the method you want to execute.
+
 
 
 ## API Endpoints Tested For Pets Resource
@@ -81,7 +107,7 @@ The following tests are implemented:
 
 - **Endpoint**: `/pet/findByTags`
     - **Method**: `GET`
-    - **Description**: Tests getting response results of pet(s) via tags.
+    - **Description**: Marked deprecated. Tests getting response results of pet(s) via tags.
 
 - **Endpoint**: `/pet/findByStatus`
     - **Method**: `GET`
@@ -89,9 +115,9 @@ The following tests are implemented:
 
 
 ### Pet Deletion
-- **Endpoint**: `/user/{username}`
+- **Endpoint**: `/pet/{petId}`
     - **Method**: `DELETE`
-    - **Description**: Deletes a user by username. This can only be done by the logged-in user.
+    - **Description**: Deletes a pet by id.
 
 ### Notes
 - The tests assume that the API server is running and accessible.
